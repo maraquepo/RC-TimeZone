@@ -12,6 +12,7 @@ def main():
   try:
     create_tables.create_timezone_table(cursor)
     create_tables.create_details_table(cursor)
+    create_tables.create_error_table(cursor)
     connection.commit()
   except Exception as e:
     print("There was an error creating the tables")

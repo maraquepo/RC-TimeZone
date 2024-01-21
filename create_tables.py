@@ -37,3 +37,17 @@ def create_details_table(cursor):
     pass
   except Exception as e:
     print(e)
+
+def create_error_table(cursor):
+  try:
+    cursor.execute('''
+      CREATE TABLE TZDB_ERROR_LOG (
+        ERROR_DATE DATE,
+        ERROR_MESSAGE VARCHAR2(1000)
+      );
+                  ''')
+
+  except sqlite3.OperationalError as e:
+    pass
+  except Exception as e:
+    print(e)
