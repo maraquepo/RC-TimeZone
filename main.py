@@ -1,5 +1,7 @@
 import sqlite3
 import create_tables
+import api
+import queries
 
 def main():
   try:
@@ -17,6 +19,15 @@ def main():
   except Exception as e:
     print("There was an error creating the tables")
     print(e)
+
+  try:
+    time_zone_data = api.get_time_zone()
+    # Insert data into database
+    queries.insert_into_timezones_list(time_zone_data, cursor, connection)
+  except Exception as e:
+    print("There was an error retreiving data or inserting into table", e)
+
+  connection.commit()
 
 if __name__ == "__main__":
   main()
