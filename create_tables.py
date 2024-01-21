@@ -16,3 +16,24 @@ def create_timezone_table(cursor):
     pass
   except Exception as e:
     print(e)
+
+def create_details_table(cursor):
+  try:
+    cursor.execute('''
+      CREATE TABLE TZDB_ZONE_DETAILS (
+        COUNTRYCODE VARCHAR2(2) NOT NULL,
+        COUNTRYNAME VARCHAR2(100) NOT NULL,
+        ZONENAME VARCHAR2(100) NOT NULL,
+        GMTOFFSET NUMBER NOT NULL,
+        DST NUMBER NOT NULL,
+        ZONESTART NUMBER NOT NULL,
+        ZONEEND NUMBER NOT NULL,
+        IMPORT_DATE DATE,
+        PRIMARY KEY (ZONENAME, ZONESTART, ZONEEND)
+      );
+                  ''')
+
+  except sqlite3.OperationalError as e:
+    pass
+  except Exception as e:
+    print(e)
