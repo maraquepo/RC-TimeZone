@@ -27,6 +27,19 @@ def main():
   except Exception as e:
     print("There was an error retreiving data or inserting into table", e)
 
+  try:
+    zone_details_list = cursor.execute(''' SELECT ZONENAME FROM TZDB_ZONE_DETAILS; ''').fetchall()
+
+    zone_list = [zone[0] for zone in zone_details_list]
+
+  except Exception as e:
+    print("There was an error retreiving data or inserting into table", e)
+
+  try:
+    queries.insert_into_zone_details(time_zone_data, zone_list, cursor, connection)
+  except Exception as e:
+    print("There was an error retreiving data or inserting into table", e)
+
   connection.commit()
 
 if __name__ == "__main__":
