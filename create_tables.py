@@ -2,7 +2,7 @@ import sqlite3
 
 def delete_timezone_table(cursor):
     try:
-        cursor.execute('DROP TABLE IF EXISTS TZDB_TIMEZONES;')
+        cursor.execute('''DROP TABLE IF EXISTS TZDB_TIMEZONES;''')
 
     except sqlite3.OperationalError as e:
         pass
