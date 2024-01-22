@@ -43,4 +43,3 @@ def insert_into_zone_details(json_data, known_zones, cursor, connection):
 
   except Exception as e:
     insert_into_error_table("Zone Details Insert Error: " + str(e), cursor, connection)
-
