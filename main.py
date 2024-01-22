@@ -17,7 +17,9 @@ def main():
     print(e)
 
   try:
-    # Create tables in the database (if they don't exist)
+    # Delete TZDB_TIMEZONES table if it exists every time script runs
+    create_tables.delete_timezone_table(cursor)
+    # Create tables in the database
     create_tables.create_timezone_table(cursor)
     create_tables.create_details_table(cursor)
     create_tables.create_error_table(cursor)
