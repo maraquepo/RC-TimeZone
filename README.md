@@ -32,7 +32,7 @@ This project interacts with the TimeZoneDB API to fetch and store time zone info
 1. Run the `main.py` script:
 
    ```bash
-   python main.py
+   python3 main.py
 
 2. The script will load data from the TimeZoneDB API and store it in the SQLite database.
 
