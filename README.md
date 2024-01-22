@@ -37,7 +37,8 @@ This project interacts with the TimeZoneDB API to fetch and store time zone info
 2. The script will load data from the TimeZoneDB API and store it in the SQLite database.
 
 ## Configuration
-Edit the api_config.ini.sample file to provide the required API key and remove '.sample' from the file name.
+Edit the api_config.ini.example file to provide the required API key and remove the comment and '.example' from the file name.
+To get access to the API provided by TimezoneDB, go to [https://timezonedb.com](https://timezonedb.com) and create an account (free). You will be provided with a Key that you can use in your scripts.
 
 ## Planning
 ![image](https://github.com/maraquepo/RC-TimeZone/assets/86852189/651e2f4a-c688-4c42-8a6e-0092ff4384a2)
